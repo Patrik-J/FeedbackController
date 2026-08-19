@@ -20,7 +20,10 @@ void FeedbackController::setSetpoint(double setpoint) {
 
 std::ostream& operator<<(std::ostream& strm, const FeedbackController& fc) {
     strm << "Feedback Controller of type " << fc.getTypeAsString();
-    strm << " with setpoint " << fc.getSetpoint() << "\n";
+    if (fc.getSetpoint() != NULL) 
+        strm << " with setpoint " << fc.getSetpoint() << "\n";
+    else 
+        strm << " undefined setpoint\n";
     return strm;
 };
 

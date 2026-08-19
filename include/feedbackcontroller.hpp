@@ -27,7 +27,7 @@ class FeedbackController {
         const char* getTypeAsString();
         const char* getTypeAsString() const;
 
-        double setpoint;
+        double setpoint = NULL;
 };
 
 #endif

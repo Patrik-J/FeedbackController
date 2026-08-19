@@ -26,6 +26,7 @@ class PIDController : public FeedbackController {
         ~PIDController();
 
         void setCaps(double time_integral, double derivative);
+        void setParams(PIDParams params);
         PIDParams getParams();
 
         double loop(double input) override;

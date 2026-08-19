@@ -65,6 +65,13 @@ void PIDController::setCaps(double time_integral, double derivative) {
     this->derivative_cap = derivative;
 }; 
 
+void PIDController::setParams(PIDParams params) {
+    this->gains = params.gains;
+    this->setpoint = params.setpoint;
+    this->time_integral_cap = params.time_integral_cap;
+    this->derivative_cap = params.derivative_cap;
+};
+
 PIDParams PIDController::getParams() {
     PIDParams params = {
         this->gains,

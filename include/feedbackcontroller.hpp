@@ -21,7 +21,7 @@ class FeedbackController {
 
         friend std::ostream& operator<<(std::ostream &strm, const FeedbackController& fc);
 
-    private:
+    protected:
         FCType type;
 
         const char* getTypeAsString();

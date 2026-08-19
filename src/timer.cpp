@@ -14,7 +14,7 @@ uint64_t Timer::currentMicros() {
     return diff.count();
 };
 
-uint64_t Timer::currentMicros() {
+uint64_t Timer::currentMillis() {
     const auto now = std::chrono::steady_clock::now();
 
     auto diff = std::chrono::duration_cast<std::chrono::milliseconds>(now - this->start_time);    

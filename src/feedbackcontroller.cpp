@@ -2,8 +2,13 @@
 
 FeedbackController::FeedbackController() {};
 
-FeedbackController::FeedbackController(double setpoint) {
+FeedbackController::FeedbackController(FCType type) {
+    this->type = type;
+};
+
+FeedbackController::FeedbackController(double setpoint, FCType type) {
     this->setpoint = setpoint;
+    this->type = type;
 };
 
 double FeedbackController::getSetpoint() {

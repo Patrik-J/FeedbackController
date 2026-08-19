@@ -10,7 +10,8 @@ enum FCType {
 class FeedbackController {
     public:
         FeedbackController();
-        FeedbackController(double setpoint);
+        FeedbackController(FCType type);
+        FeedbackController(double setpoint, FCType type);
 
         virtual double loop(double input) = 0;
         virtual void init() = 0;

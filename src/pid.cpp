@@ -1,9 +1,8 @@
 #include "pid.hpp"
 
-PIDController::PIDController() : stored_vals(5) {};
+PIDController::PIDController() : FeedbackController(FCType::PID), stored_vals(5) {};
 
-PIDController::PIDController(PIDParams params) : stored_vals(params.stored_vals) {
-    this->setpoint = params.setpoint;
+PIDController::PIDController(PIDParams params) : FeedbackController(params.setpoint, FCType::PID), stored_vals(params.stored_vals) {
     this->gains = params.gains;
     this->time_integral_cap = params.time_integral_cap;
     this->derivative_cap = params.derivative_cap;
@@ -11,7 +10,7 @@ PIDController::PIDController(PIDParams params) : stored_vals(params.stored_vals)
     this->init();
 };
 
-PIDController::PIDController(PIDGains gains, double setpoint, unsigned int stored_vals = 5) : stored_vals(stored_vals) {
+PIDController::PIDController(PIDGains gains, double setpoint, unsigned int stored_vals) : stored_vals(stored_vals) {
     this->setpoint = setpoint;
     this->gains = gains;
 
